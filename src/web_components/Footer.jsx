@@ -49,7 +49,7 @@ function Footer() {
                   </div>
                   <h3 className="text-lg font-semibold text-gray-300">Phone</h3>
                 </div>
-                <p className="text-white font-medium ml-2">+91-9811388298</p>
+                <p className="text-white font-medium ml-2">+91-8504000069</p>
               </div>
 
               <div className="group">
@@ -120,7 +120,7 @@ function Footer() {
         <div className="container mx-auto px-6 lg:px-20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 Techno Mech India. All rights reserved.
+              © 2025 Techno Mech India. All rights reserved.
             </p>
           </div>
         </div>
