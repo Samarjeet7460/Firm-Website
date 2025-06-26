@@ -18,6 +18,17 @@ import pulloutPinch from "../assets/pulloutPinch.jpg"
 import rollingMillsMachinery from "../assets/rollingMillsMachinery.jpg"
 import satatingMachine from "../assets/satatingMachine.jpg"
 import tmtRoller from "../assets/tmtRoller.jpg"
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 
 const productList = [
@@ -115,30 +126,43 @@ function Products() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {productList.map((product, index) => (
-            <div 
-              key={product.name} 
+            <div
+              key={product.name}
               className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-200"
               style={{ aspectRatio: '1/1' }}
             >
               {/* Image Container - Takes up 70% of card height */}
-              <div className="relative h-3/4 bg-gray-100">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
+              <div className="relative h-[170px] bg-gray-100">
+                <img
+                  src={product.image}
+                  alt={product.name}
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               {/* Content Container - Takes up 30% of card height */}
-              <div className="h-1/4 p-4 flex items-center justify-center">
-                <h3 className="text-sm font-semibold text-gray-900 text-center leading-tight">
+              <div className="p-4 flex items-center justify-center flex-col">
+                <h3 className="text-sm font-semibold text-gray-900 text-center leading-tight mb-6">
                   {product.name}
                 </h3>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline">View more</Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle className="self-center mb-10">{product.name}</DialogTitle>
+                      <DialogDescription>
+                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique assumenda molestias voluptates eius tempore eveniet ipsam, saepe totam unde quidem cupiditate quo magnam et. Quibusdam odit ratione nesciunt eius. Et id nam laborum quas. Ipsa minima exercitationem officiis? Reprehenderit facilis blanditiis laboriosam consequuntur dolores, et eveniet quisquam incidunt aut modi mollitia quos sint aliquam architecto! Possimus architecto facere saepe. Blanditiis at nobis aut corporis culpa libero quasi quam beatae debitis quae distinctio suscipit sapiente ipsa quod eveniet ipsum tempore optio, unde commodi facere. Recusandae aliquam doloribus, facere omnis, incidunt quis cumque, eligendi molestias quisquam natus ducimus nesciunt totam possimus nobis!</h1>
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
           ))}
         </div>
-        
+
         {/* Empty State Message */}
         {productList.length === 0 && (
           <div className="text-center py-20">
