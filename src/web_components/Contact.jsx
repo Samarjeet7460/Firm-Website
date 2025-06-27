@@ -80,7 +80,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden mt-20">
           <div className="flex flex-col lg:flex-row">
             {/* Left Section - Contact Info */}
-            <div className="lg:w-2/5 bg-amber-500 text-white p-8 lg:p-12">
+            <div className="lg:w-2/5 bg-amber-600 text-white p-8 lg:p-12">
               <div className="h-full flex flex-col">
                 <div className="mb-8">
                   <h2 className="text-3xl lg:text-4xl font-bold mb-4">Let's get in touch</h2>
@@ -231,7 +231,7 @@ const Contact = () => {
                     <Button 
                       type="submit"
                       disabled={isSubmitting}
-                      className="bg-amber-500 hover:bg-amber-600 disabled:bg-amber-300 text-white px-8 py-3 rounded-md font-medium transition-colors duration-200"
+                      className="bg-amber-600 hover:bg-amber-700 disabled:bg-amber-300 text-white px-8 py-3 rounded-md font-medium transition-colors duration-200"
                     >
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>

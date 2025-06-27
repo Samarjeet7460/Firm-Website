@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 import { Menu } from 'lucide-react'
+import logo from '../assets/logo.webp'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
@@ -23,15 +24,14 @@ function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
-      <nav className="flex items-center justify-between px-6 lg:px-12 py-4">
+      <nav className="flex items-center justify-between px-6 lg:px-12 py-2">
         {/* Brand */}
         <h1
           onClick={() => scrollToSection('home')}
-          className="font-black text-3xl text-gray-900 tracking-tight cursor-pointer hover:text-amber-500 transition-colors duration-300"
+          className="text-3xl text-gray-900 tracking-tight cursor-pointer hover:text-amber-500 transition-colors duration-300 font-semibold"
         >
           TMI
         </h1>
-
         {/* Desktop navigation */}
         <ul className="hidden lg:flex items-center gap-8">
           {links.map((link) => (
@@ -48,7 +48,7 @@ function Navbar() {
           <li>
             <Button
               onClick={() => scrollToSection('contact')}
-              className="bg-amber-500 text-white px-6 py-2.5 rounded-none font-medium text-sm transition-all duration-300 hover:shadow-lg hover:bg-amber-600"
+              className="bg-amber-500 text-white px-6 py-2.5 font-medium text-sm transition-all duration-300 hover:shadow-lg hover:bg-amber-600 rounded-lg"
             >
               +91-8504000069
             </Button>

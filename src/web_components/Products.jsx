@@ -21,139 +21,116 @@ import tmtRoller from "../assets/tmtRoller.jpg"
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
 
-
 const productList = [
   {
     image: helicalGearBox,
-    name: "Helical Gear Box"
+    name: "Helical Gear Box",
+    desc: "The Helical Gear Box is designed to deliver smooth and quiet power transmission. It is highly efficient and ideal for heavy-duty industrial applications. Built with precision, it reduces vibration and noise during operation. Its helical teeth ensure maximum torque transfer with minimal wear. Perfectly suited for rolling mill machinery and automation systems."
   },
   {
     image: elinmentRolls,
-    name: "Elinment Rolls"
+    name: "Elinment Rolls",
+    desc: "Elinment Rolls are essential components used in rolling mill stands. They are crafted from high-grade steel for superior strength and durability. Designed to withstand high pressure and temperature in continuous operations. They ensure precise shaping and smooth rolling of billets and bars. Ideal for enhancing mill productivity and surface finish of products."
   },
   {
     image: satatingMachine,
-    name: "Satating Machine 300 CRS"
+    name: "Satating Machine 300 CRS",
+    desc: "The Satating Machine 300 CRS is built for high-speed cutting and shaping. It offers accurate and consistent performance for steel bar processing. Designed with robust materials to ensure long operational life. Its compact structure makes it easy to install and maintain. Essential equipment for precision work in rolling mill lines."
   },
   {
     image: tmtRoller,
-    name: "Tmt Roller Conveyor"
+    name: "Tmt Roller Conveyor",
+    desc: "The TMT Roller Conveyor is used to transport hot TMT bars efficiently. It supports seamless movement between rolling stages and cooling beds. Made from heat-resistant alloy steel to endure high temperatures. The rollers are precisely aligned for smooth and safe bar movement. An integral part of automation in TMT bar production."
   },
   {
     image: billerTransfer,
-    name: "Billet Transfer Trolly"
+    name: "Billet Transfer Trolly",
+    desc: "The Billet Transfer Trolly moves billets safely between processing areas. Engineered with heavy-duty frames to handle high loads. Operates smoothly with minimal manual intervention. Reduces downtime and enhances production line efficiency. Widely used in steel plants and rolling mill setups."
   },
   {
     image: millWheel,
-    name: "Mill Wheel"
+    name: "Mill Wheel",
+    desc: "The Mill Wheel is a critical rotating component in rolling mills. It is designed to bear high loads and continuous motion. Precision-engineered for excellent balancing and smooth operation. Made from premium steel to resist wear and deformation. Ensures optimal performance of rolling mill machines."
   },
   {
     image: chain,
-    name: "Chain Sprocket"
+    name: "Chain Sprocket",
+    desc: "Chain Sprockets are used for synchronized motion in rolling machinery. They are manufactured with precision teeth for perfect chain fit. Durable construction allows them to endure heavy industrial use. They play a key role in power transmission systems. Ideal for various roller conveyors and mechanical setups."
   },
   {
     image: pulloutPinch,
-    name: "Pullout Pinch Roll"
+    name: "Pullout Pinch Roll",
+    desc: "The Pullout Pinch Roll assists in gripping and guiding the metal strip. It helps extract the material from mill stands smoothly. Crafted with hardened steel rolls for extended life. Operates under high pressure and maintains alignment. Crucial for controlled rolling and discharge in mills."
   },
   {
     image: barBundling,
-    name: "Bar Bundling Machine"
+    name: "Bar Bundling Machine",
+    desc: "This machine is used to bundle steel bars automatically after rolling. It ensures uniform, tight, and secure packaging of finished bars. Reduces manual labor and speeds up dispatch preparation. Made with corrosion-resistant material for long-term use. Highly effective in improving post-production efficiency."
   },
-  {
-    image: mill1,
-    name: "Rolling Mill Accessories"
-  },
-  {
-    image: mill2,
-    name: "Rolling Mill Accessories"
-  },
-  {
-    image: mill3,
-    name: "Rolling Mill Accessories"
-  },
-  {
-    image: mill4,
-    name: "Rolling Mill Accessories"
-  },
-  {
-    image: mill5,
-    name: "Rolling Mill Accessories"
-  },
-  {
-    image: mill6,
-    name: "Rolling Mill Accessories"
-  },
-  {
-    image: mill7,
-    name: "Rolling Mill Accessories"
-  },
-  {
-    image: mill8,
-    name: "Rolling Mill Accessories"
-  },
+  ...[
+    mill1, mill2, mill3, mill4, mill5, mill6, mill7, mill8
+  ].map(image => ({
+    image,
+    name: "Rolling Mill Accessories",
+    desc: "Our Rolling Mill Accessories include guides, couplings, spindles, and more. Each part is manufactured to meet exact industrial standards. They enhance machine performance and reduce downtime. Ideal for customization and upgrades in rolling mill systems. Tested for durability and compatibility with major mill brands."
+  })),
   {
     image: rollingMillsMachinery,
-    name: "Rolling Mills Machinery Parts"
-  },
+    name: "Rolling Mills Machinery Parts",
+    desc: "These parts include essential spares for all types of rolling mills. From gearboxes to stands, each part supports uninterrupted operation. They are fabricated from high-quality materials for maximum life. Precision engineering ensures perfect fit and smooth functionality. A complete solution for maintaining and repairing mill machinery."
+  }
 ]
 
 function Products() {
   return (
-    <div className="min-h-screen bg-gray-50" id='products'>
-      {/* Header Section */}
-      <div className="text-black py-16 lg:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-gray-900">
-            Our Products
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Discover our range of high-quality industrial solutions
-          </p>
-          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
-        </div>
+    <div className="min-h-screen bg-gray-50" id="products">
+      {/* Header */}
+      <div className="py-16 bg-white text-center">
+        <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4">Our Products</h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Discover our range of high-quality industrial solutions tailored for rolling mills and steel plants.
+        </p>
+        <div className="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
       </div>
 
-      {/* Products Grid */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {/* Product Grid */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
           {productList.map((product, index) => (
             <div
-              key={product.name}
-              className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-200"
-              style={{ aspectRatio: '1/1' }}
+              key={index}
+              className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 w-[270px] h-[300px]"
             >
-              {/* Image Container - Takes up 70% of card height */}
-              <div className="relative h-[170px] bg-gray-100">
+              <div className="relative h-[180px] bg-gray-100 overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
 
-              {/* Content Container - Takes up 30% of card height */}
-              <div className="p-4 flex items-center justify-center flex-col">
-                <h3 className="text-sm font-semibold text-gray-900 text-center leading-tight mb-6">
+              <div className="p-4 flex flex-col items-center justify-between h-[120px]">
+                <h3 className="text-base font-semibold text-center text-gray-800 mb-4 leading-tight">
                   {product.name}
                 </h3>
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button variant="outline">View more</Button>
+                    <Button variant="outline" className="text-sm">View More</Button>
                   </DialogTrigger>
-                  <DialogContent className="sm:max-w-[425px]">
+                  <DialogContent className="sm:max-w-[500px]">
                     <DialogHeader>
-                      <DialogTitle className="self-center mb-10">{product.name}</DialogTitle>
-                      <DialogDescription>
-                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique assumenda molestias voluptates eius tempore eveniet ipsam, saepe totam unde quidem cupiditate quo magnam et. Quibusdam odit ratione nesciunt eius. Et id nam laborum quas. Ipsa minima exercitationem officiis? Reprehenderit facilis blanditiis laboriosam consequuntur dolores, et eveniet quisquam incidunt aut modi mollitia quos sint aliquam architecto! Possimus architecto facere saepe. Blanditiis at nobis aut corporis culpa libero quasi quam beatae debitis quae distinctio suscipit sapiente ipsa quod eveniet ipsum tempore optio, unde commodi facere. Recusandae aliquam doloribus, facere omnis, incidunt quis cumque, eligendi molestias quisquam natus ducimus nesciunt totam possimus nobis!</h1>
+                      <DialogTitle className="text-center text-lg font-semibold mb-4">
+                        {product.name}
+                      </DialogTitle>
+                      <DialogDescription className="text-gray-700 text-sm leading-relaxed text-justify">
+                        {product.desc}
                       </DialogDescription>
                     </DialogHeader>
                   </DialogContent>
@@ -163,14 +140,14 @@ function Products() {
           ))}
         </div>
 
-        {/* Empty State Message */}
+        {/* Empty State */}
         {productList.length === 0 && (
           <div className="text-center py-20">
             <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-6 flex items-center justify-center">
               <div className="w-8 h-8 bg-blue-600 rounded"></div>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">No products available</h3>
-            <p className="text-gray-600 text-lg">Check back later for new products.</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">No Products Available</h3>
+            <p className="text-gray-600 text-lg">Please check back later for updates.</p>
           </div>
         )}
       </div>
